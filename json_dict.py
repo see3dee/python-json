@@ -20,6 +20,12 @@ print(f"{movie_dict['title']} was released in the year {movie_dict['release_year
 for key in sorted(movie_dict.keys()):
     print(key, movie_dict[key])
 
+# Let's convert the dictionary into a json-packet in a file object, using the json.dump method
+# first create a new file object 'txt_file_json' with the open function
+txt_file_json = open("/home/see3dee/movie.txt", "w", )
+json.dump(movie_dict, txt_file_json)
+# see output file: /home/see3dee/movie.txt
+
 
 # Dealing with json packets in strings
 # json packet in triple quotes
@@ -54,3 +60,8 @@ print(f"{movie_dict['title']} was released in the year {movie_dict['release_year
 # accessing each key/value
 for key in sorted(movie_dict.keys()):
     print(key, movie_dict[key])
+
+# Let's convert the dictionary back to a json-packet string, using the json.dumps method
+
+json_packet = json.dumps(movie_dict)
+print(f" here is the json packet using the json.dumps() on the movie_dict: {json_packet}")
